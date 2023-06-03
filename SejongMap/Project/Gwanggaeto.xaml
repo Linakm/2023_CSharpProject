@@ -1,0 +1,126 @@
+﻿<Window x:Class="Project.Gwanggaeto"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Gwanggaeto" Height="450" Width="800">
+    <Grid Background="#E0E0E0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               VerticalContentAlignment="Center"
+               Padding="30 0 0 0"
+               FontSize="20px"
+                Grid.ColumnSpan="5"
+               FontFamily="나눔고딕" Foreground="Black"
+               FontWeight="Bold">광개토관</Label>
+
+        <Image Grid.Column="0" Grid.Row="1" Width="300" Height="340" Grid.RowSpan="7" Grid.ColumnSpan="2"  Source="./Images/Gwanggaeto.png" ></Image>
+
+        <Label Background="#FFFDE5"  Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="8" Margin="48,33,52,54" Width="300">
+
+        </Label>
+
+        <Button Grid.Column="2" Grid.Row="1" Margin="79,48,79,15" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="#B5B3A7"  BorderBrush="Transparent" BorderThickness="0" Click="GwanggaetoButton1_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="SemiBold" Content="1F" Margin="0 -10 70 0" FontSize="20"/>
+                <Label FontWeight="SemiBold" Name="G_UsingCnt1" Content="10 /"/>
+                <Label FontWeight="SemiBold" Name="G_MaxCnt1" Content="20" Margin="0"/>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="3" Margin="79,0,79,15" Grid.ColumnSpan="2" Background="#B5B3A7"  BorderBrush="Transparent" BorderThickness="0" Click="GwanggaetoButton2_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="SemiBold" Content="2F" Margin="0 -10 70 0" FontSize="20"/>
+                <Label FontWeight="SemiBold" Name="G_UsingCnt2" Content="10 /"/>
+                <Label FontWeight="SemiBold" Name="G_MaxCnt2" Content="20" Margin="0"/>
+            </StackPanel>
+        </Button>
+
+
+        <Button Grid.Column="2" Grid.Row="4" Margin="79,0,79,15" Grid.ColumnSpan="2" Background="#B5B3A7"  BorderBrush="Transparent" BorderThickness="0" Click="GwanggaetoButton3_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="SemiBold" Content="4F" Margin="0 -10 70 0" FontSize="20"/>
+                <Label FontWeight="SemiBold" x:Name="G_UsingCnt3" Content="10 /"/>
+                <Label FontWeight="SemiBold" Name="G_MaxCnt3" Content="20" Margin="0"/>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Column="2" Grid.Row="4" Margin="79,48,79,16" Grid.ColumnSpan="2" Background="#B5B3A7"  BorderBrush="Transparent" BorderThickness="0" Click="GwanggaetoButton4_Click" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="SemiBold" Content="6F" Margin="0 -10 70 0" FontSize="20"/>
+                <Label FontWeight="SemiBold" x:Name="G_UsingCnt4" Content="10 /"/>
+                <Label FontWeight="SemiBold" Name="G_MaxCnt4" Content="20" Margin="0"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="5" Margin="79,48,79,16" Grid.ColumnSpan="2" Background="#B5B3A7"  BorderBrush="Transparent" BorderThickness="0" Click="GwanggaetoButton5_Click" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10">
+                    </Setter>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="SemiBold" Content="7F" Margin="0 -10 70 0" FontSize="20"/>
+                <Label FontWeight="SemiBold" Name="G_UsingCnt5" Content="10 /"/>
+                <Label FontWeight="SemiBold" Name="G_MaxCnt5" Content="20" Margin="0"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="6" Margin="79,46,79,19" Grid.ColumnSpan="2" Background="#B5B3A7"  BorderBrush="Transparent" BorderThickness="0" Click="GwanggaetoButton6_Click" Grid.RowSpan="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <StackPanel Orientation="Horizontal">
+                <Label FontWeight="SemiBold" Content="8F" Margin="0 -10 70 0" FontSize="20"/>
+                <Label FontWeight="SemiBold" x:Name="G_UsingCnt6" Content="10 /"/>
+                <Label FontWeight="SemiBold" x:Name="G_MaxCnt6" Content="20" Margin="0"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>

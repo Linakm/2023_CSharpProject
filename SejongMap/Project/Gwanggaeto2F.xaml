@@ -1,0 +1,163 @@
+﻿<Page x:Class="Project.Gwanggaeto2F"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project"
+        mc:Ignorable="d"
+        Title="Gwanggaeto2F" Height="450" Width="800">
+    <Grid Background="#E0E0E0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               VerticalContentAlignment="Center"
+               Padding="30 0 0 0"
+               FontSize="20px"
+                Grid.ColumnSpan="5"
+               FontFamily="나눔고딕" Foreground="Black"
+               FontWeight="Bold">광개토관 2층</Label>
+
+
+        <Canvas Grid.Row="1" Width="300" Background="#FFFDE5" Margin="250,23,250,10">
+            <Button Canvas.Left="16" Canvas.Top="10" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="201호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt1"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt1"/>
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="202호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right" Name="usingCnt2"/>
+                    <Label Content="20" Grid.Column="2"  Name="maxCnt2"/>
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="70" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="203호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt3"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt3" />
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="100" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="204호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt4"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt4"/>
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="130" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="205호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt5"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt5"/>
+                </Grid>
+            </Button>
+
+
+            <Button Canvas.Left="16" Canvas.Top="160" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="206호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt6"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt6" />
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="190" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="207호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt7"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt7" />
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="220" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="208호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt8"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt8" />
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="250" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="209호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt9"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt9" />
+                </Grid>
+            </Button>
+
+            <Button Canvas.Left="16" Canvas.Top="280" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+                <Grid Width="268">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="211호" Grid.Column="0" />
+                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt10"/>
+                    <Label Content="20" Grid.Column="2" Name="maxCnt" />
+                </Grid>
+            </Button>
+
+        </Canvas>
+
+
+
+
+    </Grid>
+</Page>
