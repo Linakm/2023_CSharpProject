@@ -46,8 +46,8 @@
             </Button.Resources>
             <StackPanel Orientation="Horizontal">
                 <Label FontWeight="SemiBold" Content="1F" Margin="0 -10 70 0" FontSize="20"/>
-                <Label FontWeight="SemiBold" x:Name="UsingCnt1" Content="10 /"/>
-                <Label FontWeight="SemiBold" Name="MaxCnt1" Content="20" Margin="0"/>
+                <Label FontWeight="SemiBold" x:Name="UsingCnt1" Content=""/>
+                <Label FontWeight="SemiBold" Name="MaxCnt1" Content="/ 1" Margin="0"/>
             </StackPanel>
         </Button>
 

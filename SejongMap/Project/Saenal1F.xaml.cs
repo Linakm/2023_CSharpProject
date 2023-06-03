@@ -19,9 +19,22 @@ namespace Project
     /// </summary>
     public partial class Saenal1F : Page
     {
-        public Saenal1F()
+       
+        private List<string> buildingClassrooms; // 건물 강의실 리스트 변수
+        
+        public Saenal1F(List<string> buildingClassrooms)
         {
             InitializeComponent();
+            this.buildingClassrooms = buildingClassrooms; // 건물 강의실 리스트 할당
+            ShowClassroomNumbers(); // 강의실 번호 표시
+        }
+
+        private void ShowClassroomNumbers()
+        {
+            for (int i = 0; i < buildingClassrooms.Count; i++)
+            {
+               
+            }
         }
     }
 }

@@ -45,8 +45,8 @@
             </Button.Resources>
             <StackPanel Orientation="Horizontal">
                 <Label FontWeight="SemiBold" Content="1F" Margin="0 -10 70 0" FontSize="20"/>
-                <Label FontWeight="SemiBold" x:Name="UsingCnt1" Content="10 /"/>
-                <Label FontWeight="SemiBold" Name="MaxCnt1" Content="20" Margin="0"/>
+                <Label FontWeight="SemiBold" x:Name="UsingCnt1" Content="" RenderTransformOrigin="-1.068,15.614"/>
+                <Label FontWeight="SemiBold" Name="MaxCnt1" Content="/ 4" Margin="0"/>
             </StackPanel>
         </Button>
 
@@ -59,8 +59,8 @@
             </Button.Resources>
             <StackPanel Orientation="Horizontal">
                 <Label FontWeight="SemiBold" Content="2F" Margin="0 -10 70 0" FontSize="20"/>
-                <Label FontWeight="SemiBold" Name="UsingCnt2" Content="10 /"/>
-                <Label FontWeight="SemiBold" Name="MaxCnt2" Content="20" Margin="0"/>
+                <Label FontWeight="SemiBold" Name="UsingCnt2" Content=""/>
+                <Label FontWeight="SemiBold" Name="MaxCnt2" Content="/ 5" Margin="0"/>
             </StackPanel>
         </Button>
 

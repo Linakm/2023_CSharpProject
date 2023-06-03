@@ -50,23 +50,7 @@ namespace Project
             */
 
             //MySQL연동하여 상호작용
-            MySqlConnection MyConnection = new MySqlConnection("Server = '172.19.29.101'; Port = 3307; Database = sejongmap; " +
-                                                                "Uid = root; Pwd = vangogh1!");
-            
-            string selectQuery = "SELECT COUNT(RoomNumber) FROM project WHERE BuildingName = '대양AI센터' AND DayOfWeek = dayofweek(CURDATE()) AND timediff(CURTIME(), StartTime) > 0 AND timediff(EndTime, CURTIME()) > 0 " +
-                "AND RoomNumber LIKE 'B1%';";
-
-            MyConnection.Open();
-
-            MySqlCommand cmd = new MySqlCommand(selectQuery, MyConnection);
-            
-            object result = cmd.ExecuteScalar();
-            
-            if (result != null)
-            {
-                UsingCnt1.Content = result;
-            }
-
+           
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("/AICenterB1F.xaml", UriKind.RelativeOrAbsolute));
 
@@ -85,24 +69,7 @@ namespace Project
             else
                 UsingCnt2.Foreground = new SolidColorBrush(Colors.Green);
             */
-            //MySQL연동하여 상호작용
-            MySqlConnection MyConnection = new MySqlConnection("Server = '172.19.29.101'; Port = 3307; Database = sejongmap; " +
-                                                                "Uid = root; Pwd = vangogh1!");
-
-            string selectQuery = "SELECT COUNT(RoomNumber) FROM project WHERE BuildingName = '대양AI센터' AND DayOfWeek = dayofweek(CURDATE()) AND timediff(CURTIME(), StartTime) > 0 AND timediff(EndTime, CURTIME()) > 0 " +
-                "AND RoomNumber LIKE 'B2%';";
-
-            MyConnection.Open();
-
-            MySqlCommand cmd = new MySqlCommand(selectQuery, MyConnection);
-
-            object result = cmd.ExecuteScalar();
-
-            if (result != null)
-            {
-                UsingCnt2.Content = result;
-            }
-
+            
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("/AICenterB2F.xaml", UriKind.RelativeOrAbsolute));
         }

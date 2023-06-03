@@ -22,6 +22,9 @@ namespace Project
         private string DayOfWeek;
         private const string csvFilePath = "classdata.csv";
         List<ScheduleItem> scheduleItems;
+        List<string>[] buildingClassrooms;
+        string[] buildingNames;
+        int[] classroomCounts;
         public Page3(TimeSpan startTime, TimeSpan usageTime, string dayOfWeek)
         {
             InitializeComponent();
@@ -38,11 +41,15 @@ namespace Project
 
         private void SaenalClick(object sender, RoutedEventArgs e)
         {
-            NavigateToRoomPage("Saenal");
+            Saenal Saenal = new Saenal(buildingClassrooms[0]);
+           // NavigateToRoomPage("Saenal");
+            NavigationService.Navigate(Saenal);
+
         }
 
         private void JiphyeonClick(object sender, RoutedEventArgs e)
         {
+
             NavigateToRoomPage("Jiphyeon");
         }
 
@@ -53,7 +60,9 @@ namespace Project
 
         private void GwanggaetoClick(object sender, RoutedEventArgs e)
         {
+           // Gwanggaeto Gwanggaeto = new Gwanggaeto(buildingClassrooms[3]); // 아직 안했다. 다시 해보자입니다. 
             NavigateToRoomPage("Gwanggaeto");
+           // NavigationService.Navigate(Gwanggaeto);
         }
 
         private void LeedangClick(object sender, RoutedEventArgs e)
@@ -70,14 +79,15 @@ namespace Project
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri($"/{roomName}.xaml", UriKind.RelativeOrAbsolute));
+           
         }
       
-
+        //
 
         private void DisplayAvailableRoomCounts()
         {
 
-            List<string>[] buildingClassrooms = new List<string>[6];
+             buildingClassrooms = new List<string>[6];
 
             // 건물별 사용 가능한 강의실 추가
             buildingClassrooms[0] = new List<string>(); // 새날관
@@ -88,15 +98,14 @@ namespace Project
             buildingClassrooms[5] = new List<string>(); // 대양AI센터
 
             // 강의실 번호 추가
-           
 
 
-            string[] strings = new string[6] { "새날관", "집현관", "군자관", "광개토관", "이당관", "대양AI센터" };
-            int[] classroomCounts = new int[6];
+
+            buildingNames = new string[6] { "새날관", "집현관", "군자관", "광개토관", "이당관", "대양AI센터" };
+            classroomCounts = new int[6];
             string dayOfWeek = DayOfWeek;
              TimeSpan startTime = this.StartTime;
              TimeSpan endTime = this.UsageTime;
-
 
             TimeSpan timeDifference = endTime - startTime;
             int num = (int)(timeDifference.TotalMinutes / 30);// 30분이 몇번 있는지이다. 
@@ -110,7 +119,7 @@ namespace Project
                     var currentItem = scheduleItems[i];
                     string buildingName = currentItem.BuildingName;
 
-                    if (currentItem.DayOfWeek == dayOfWeek && currentItem.StartTime == startTime && buildingName==strings[j])
+                    if (currentItem.DayOfWeek == dayOfWeek && currentItem.StartTime == startTime && buildingName== buildingNames[j])
                     {
                         if (scheduleItems[i + num - 1].EndTime == endTime)// 
                         {
@@ -126,7 +135,6 @@ namespace Project
                 classroomCounts[j] = buildingClassrooms[j].Count;
             }
         
-
 
         // UI 요소에 개수와 강의실 목록을 표시
         SaenalCountLabel.Content = buildingClassrooms[0].Count;

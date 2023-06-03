@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using Project;
+
+
 namespace Project
 {
     /// <summary>
@@ -20,45 +23,30 @@ namespace Project
     /// </summary>
     public partial class Saenal : Page
     {
-        public Saenal()
+        private int usingCount = 10; // 사용 중인 개수 변수
+        private int maxCount = 20; // 최대 개수 변수
+        private List<string> buildingClassrooms;// 건물 강의실 리스트 변수
+        public Saenal(List<string> buildingClassrooms)
         {
             InitializeComponent();
+            this.buildingClassrooms = buildingClassrooms; // 건물 강의실 리스트 할당
+            UpdateLabels(); // 초기 라벨 값 업데이트
         }
-
+        private void UpdateLabels()
+        {
+            int num = buildingClassrooms.Count;
+            // 라벨에 값을 할당하여 출력
+            UsingCnt1.Content = $"{num}";
+            //MaxCnt1.Content = maxCount.ToString();
+        }
         private void SaenalButton1_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            int usingCnt = 10;
-            int maxCnt = 20;
-
-            UsingCnt1.Content = usingCnt + " / ";
-            MaxCnt1.Content = maxCnt;
-
-            if (usingCnt >= maxCnt)
-                UsingCnt1.Foreground = new SolidColorBrush(Colors.Red);
-            else
-                UsingCnt1.Foreground = new SolidColorBrush(Colors.Green);
-            */
-            //MySQL연동하여 상호작용
-           // MySqlConnection MyConnection = new MySqlConnection("Server = localhost; Port = 3307; Database = sejongmap; " +
-                                                               // "Uid = root; Pwd = vangogh1!");
-
-           // string selectQuery = "SELECT COUNT(RoomNumber) FROM project WHERE BuildingName = '새날관' AND DayOfWeek = dayofweek(CURDATE()) AND timediff(CURTIME(), StartTime) > 0 AND timediff(EndTime, CURTIME()) > 0 " +
-              //  "AND RoomNumber LIKE '1%';";
-
-           // MyConnection.Open();
-
-          //  MySqlCommand cmd = new MySqlCommand(selectQuery, MyConnection);
-
-           // object result = cmd.ExecuteScalar();
-
-          //  if (result != null)
-           // {
-             //   UsingCnt1.Content = result;
-           // }
+          
 
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri("/Saenal1F.xaml", UriKind.RelativeOrAbsolute));
+
+
         }
     }
 
