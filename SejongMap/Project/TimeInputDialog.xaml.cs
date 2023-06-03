@@ -7,11 +7,11 @@ namespace Project
 {
     public partial class TimeInputDialog : Page
     {
+        private string[] daysOfWeek = { "월요일", "화요일", "수요일", "목요일", "금요일", "토요일" };
 
         public TimeInputDialog()
         {
             InitializeComponent();
-
 
             // 시작 시간
             for (int hour = 9; hour <= 22; hour++)
@@ -23,7 +23,6 @@ namespace Project
                 }
             }
 
-
             // 사용 시간
             for (int hour = 9; hour <= 22; hour++)
             {
@@ -34,10 +33,15 @@ namespace Project
                 }
             }
 
-          
+            // 요일
+            foreach (string day in daysOfWeek)
+            {
+                dayOfWeekComboBox.Items.Add(day);
+            }
+
             // 이벤트 핸들러 등록 (필요에 따라 추가)
             // startTimeComboBox.SelectionChanged += StartTimeComboBox_SelectionChanged;
-            //usageTimeComboBox.SelectionChanged += UsageTimeComboBox_SelectionChanged;
+            // usageTimeComboBox.SelectionChanged += UsageTimeComboBox_SelectionChanged;
         }
 
         private void StartTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,27 +58,31 @@ namespace Project
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (startTimeComboBox.SelectedItem != null && usageTimeComboBox.SelectedItem != null)
+            if (startTimeComboBox.SelectedItem != null && usageTimeComboBox.SelectedItem != null && dayOfWeekComboBox.SelectedItem != null)
             {
                 string startTime = startTimeComboBox.SelectedItem.ToString();
                 string usageTime = usageTimeComboBox.SelectedItem.ToString();
+                string dayOfWeek = dayOfWeekComboBox.SelectedItem.ToString();
 
                 if (TimeSpan.TryParse(startTime, out TimeSpan startTimeSpan) && TimeSpan.TryParse(usageTime, out TimeSpan usageTimeSpan))
                 {
-                    Page3 page3 = new Page3(startTimeSpan, usageTimeSpan);
+                    Page3 page3 = new Page3(startTimeSpan, usageTimeSpan, dayOfWeek);
                     NavigationService.Navigate(page3);
                 }
                 else
                 {
-                    MessageBox.Show("Please select a valid start time and usage time.");
+                    MessageBox.Show("Please select a valid start time, usage time, and day of week.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a valid start time and usage time.");
+                MessageBox.Show("Please select a valid start time, usage time, and day of week.");
             }
         }
 
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }

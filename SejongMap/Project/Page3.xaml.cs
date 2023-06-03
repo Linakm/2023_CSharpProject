@@ -13,22 +13,23 @@ using System.Windows.Shapes;
 using Project;
 namespace Project
 {
-   
-         
+
+    // 지도창서만 사이즈  바꾸는 것 어떨까요?
     public partial class Page3 : Page
     {
         private TimeSpan StartTime;
         private TimeSpan UsageTime; // 사용시간이 아니라 끝나는 시간인데 변수 이름을 안바꿨습니다. 
-        
+        private string DayOfWeek;
         private const string csvFilePath = "classdata.csv";
         List<ScheduleItem> scheduleItems;
-        public Page3(TimeSpan startTime, TimeSpan usageTime)
+        public Page3(TimeSpan startTime, TimeSpan usageTime, string dayOfWeek)
         {
             InitializeComponent();
 
             // startTime과 usageTime 값을 멤버 변수에 저장
             this.StartTime = startTime;
             this.UsageTime = usageTime;
+            this.DayOfWeek = dayOfWeek;
             CSVReader csvReader = new CSVReader();
             scheduleItems = csvReader.ReadCSV(csvFilePath);
             DisplayAvailableRoomCounts();
@@ -70,93 +71,86 @@ namespace Project
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri($"/{roomName}.xaml", UriKind.RelativeOrAbsolute));
         }
-
-
+      
 
 
         private void DisplayAvailableRoomCounts()
         {
-            // string dayOfWeek = DateTime.Now.DayOfWeek.ToString();
+
+            List<string>[] buildingClassrooms = new List<string>[6];
+
+            // 건물별 사용 가능한 강의실 추가
+            buildingClassrooms[0] = new List<string>(); // 새날관
+            buildingClassrooms[1] = new List<string>(); // 집현관
+            buildingClassrooms[2] = new List<string>(); // 군자관
+            buildingClassrooms[3] = new List<string>(); // 광개토관
+            buildingClassrooms[4] = new List<string>(); // 이당관
+            buildingClassrooms[5] = new List<string>(); // 대양AI센터
+
+            // 강의실 번호 추가
+           
 
 
-            Dictionary<string, int> roomCounts = new Dictionary<string, int>
-    {
-        { "새날관", 0 },
-        { "집현관", 0 },
-        { "군자관", 0 },
-        { "광개토관", 0 },
-        { "이당관", 0 },
-        { "대양AI센터", 0 }
-    };
-            Dictionary<string, int> roomCounttmps = new Dictionary<string, int>
-    {
-        { "새날관", 0 },
-        { "집현관", 0 },
-        { "군자관", 0 },
-        { "광개토관", 0 },
-        { "이당관", 0 },
-        { "대양AI센터", 0 }
-    };
+            string[] strings = new string[6] { "새날관", "집현관", "군자관", "광개토관", "이당관", "대양AI센터" };
+            int[] classroomCounts = new int[6];
+            string dayOfWeek = DayOfWeek;
+             TimeSpan startTime = this.StartTime;
+             TimeSpan endTime = this.UsageTime;
 
-            CultureInfo culture = new CultureInfo("ko-KR");
-            string dayOfWeek = DateTime.Now.ToString("dddd", culture);
-            TimeSpan startTime = this.StartTime;
-            TimeSpan endTime = this.UsageTime;
 
-            // 여기 코드 다시 짤 예정입니다. roomcount부분이요!
-            foreach (var roomCount in roomCounts)
+            TimeSpan timeDifference = endTime - startTime;
+            int num = (int)(timeDifference.TotalMinutes / 30);// 30분이 몇번 있는지이다. 
+            
+            for (int j = 0; j < 6; j++)
             {
-                string buildingName = roomCount.Key;
-                int count = 0;
-                List<string> roomNumbers = new List<string>();
-
-                DateTime currentTime = DateTime.Today.Add(startTime); // 현재 날짜 시간
-                int numIntervals = (int)Math.Ceiling((endTime - startTime).TotalMinutes / 30);
-
-                while (startTime <= endTime)
+                
+                for (int i = 0; i < 2811; i++) //2811개이다. 
                 {
-                    bool isRoomAvailable = scheduleItems.Any(item => item.BuildingName == buildingName &&
-                                                                    item.StartTime <= startTime &&
-                                                                    item.EndTime >= startTime.Add(new TimeSpan(0, 30, 0)) &&
-                                                                    item.DayOfWeek == currentTime.DayOfWeek.ToString());
+                    if (i + num - 1 >= 2811) break;
+                    var currentItem = scheduleItems[i];
+                    string buildingName = currentItem.BuildingName;
 
-                    if (isRoomAvailable)
+                    if (currentItem.DayOfWeek == dayOfWeek && currentItem.StartTime == startTime && buildingName==strings[j])
                     {
-                        // 이미 카운트된 강의실인지 확인
-                        string roomNumber = scheduleItems.First(item => item.BuildingName == buildingName &&
-                                                                       item.StartTime <= startTime &&
-                                                                       item.EndTime >= startTime.Add(new TimeSpan(0, 30, 0)) &&
-                                                                       item.DayOfWeek == currentTime.DayOfWeek.ToString()).RoomNumber;
-                        if (!roomNumbers.Contains(roomNumber))
+                        if (scheduleItems[i + num - 1].EndTime == endTime)// 
                         {
-                            roomNumbers.Add(roomNumber);
-                            count++;
+
+                            buildingClassrooms[j].Add(scheduleItems[i].RoomNumber); // j는 건물에 해당하는 인덱스
+                            i += num-1; // 뒤에서 하나더 추가를 하기 때문에
                         }
+                        
+                      
                     }
-
-                    startTime = startTime.Add(new TimeSpan(0, 30, 0));
+                   
                 }
-
-                if (numIntervals == count)
-                {
-                    roomCounttmps[buildingName] = count;
-                }
+                classroomCounts[j] = buildingClassrooms[j].Count;
             }
+        
 
 
-            // UI 요소에 개수를 표시
-            SaenalCountLabel.Content = roomCounttmps["새날관"];
-            JiphyeonCountLabel.Content = roomCounttmps["집현관"];
-            GoonjaCountLabel.Content = roomCounttmps["군자관"];
-            GwanggaetoCountLabel.Content = roomCounttmps["광개토관"];
-            LeedangCountLabel.Content = roomCounttmps["이당관"];
-            AIcenterCountLabel.Content = roomCounttmps["대양AI센터"];
+        // UI 요소에 개수와 강의실 목록을 표시
+        SaenalCountLabel.Content = buildingClassrooms[0].Count;
+
+
+        JiphyeonCountLabel.Content = buildingClassrooms[1].Count;
+           
+
+           GoonjaCountLabel.Content = buildingClassrooms[2].Count;
+          
+
+           GwanggaetoCountLabel.Content = buildingClassrooms[3].Count;
+           
+
+            LeedangCountLabel.Content = buildingClassrooms[4].Count;
+         
+
+            AIcenterCountLabel.Content = buildingClassrooms[5].Count;
+           
 
 
 
         }
-       
-        private void DisplayRoomCount(string building, int count)
+            private void DisplayRoomCount(string building, int count)
         {
             // 건물별로 예약 가능한 강의실 개수를 표시
             switch (building)

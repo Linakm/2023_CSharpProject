@@ -5,7 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:local="clr-namespace:Project"
       mc:Ignorable="d"
-      Title="Page3" Height="450" Width="800">
+      Title="Page3" Height="450" Width="800"> 
     <Grid Background="#E0E0E0">
 
         <Grid.ColumnDefinitions>
@@ -34,37 +34,33 @@
                     <Image Source="./Images/marker.png"></Image>
                 </Button>
 
-                <!-- 라벨들의 위치를 마커 위에 조정 -->
-                <Label x:Name="SaenalCountLabel" Canvas.Top="70" Canvas.Left="160" FontSize="18" />
+                <Label x:Name="SaenalCountLabel" Canvas.Top="60" Canvas.Left="155" FontSize="18" />
 
                 <Button Width="30" Height="30" Canvas.Top="600" Canvas.Left="240" Background="Transparent" BorderBrush="Transparent" Click="JiphyeonClick">
                     <Image Source="./Images/marker.png"></Image>
                 </Button>
 
-                <!-- 라벨들의 위치를 마커 위에 조정 -->
-                <Label x:Name="JiphyeonCountLabel" Canvas.Top="630" Canvas.Left="270" FontSize="18" />
-
-                <!-- 나머지 마커와 라벨들에 대해서도 동일하게 조정 -->
+                <Label x:Name="JiphyeonCountLabel" Canvas.Top="620" Canvas.Left="260" FontSize="18" />
 
                 <Button Width="30" Height="30" Canvas.Top="540" Canvas.Left="240" Background="Transparent" BorderBrush="Transparent" Click="GoonjaClick">
                     <Image Source="./Images/marker.png"></Image>
                 </Button>
-                <Label x:Name="GoonjaCountLabel" Canvas.Top="570" Canvas.Left="270" FontSize="18" />
+                <Label x:Name="GoonjaCountLabel" Canvas.Top="550" Canvas.Left="260" FontSize="18" />
 
                 <Button Width="30" Height="30" Canvas.Top="420" Canvas.Left="190" Background="Transparent" BorderBrush="Transparent" Click="GwanggaetoClick">
                     <Image Source="./Images/marker.png"></Image>
                 </Button>
-                <Label x:Name="GwanggaetoCountLabel" Canvas.Top="450" Canvas.Left="220" FontSize="18" />
+                <Label x:Name="GwanggaetoCountLabel" Canvas.Top="430" Canvas.Left="205" FontSize="18" />
 
                 <Button Width="30" Height="30" Canvas.Top="405" Canvas.Left="150" Background="Transparent" BorderBrush="Transparent" Click="LeedangClick">
                     <Image Source="./Images/marker.png"></Image>
                 </Button>
-                <Label x:Name="LeedangCountLabel" Canvas.Top="435" Canvas.Left="180" FontSize="18" />
+                <Label x:Name="LeedangCountLabel" Canvas.Top="415" Canvas.Left="165" FontSize="18" />
 
                 <Button Width="30" Height="30" Canvas.Top="390" Canvas.Left="420" Background="Transparent" BorderBrush="Transparent" Click="AicenterClick">
                     <Image Source="./Images/marker.png"></Image>
                 </Button>
-                <Label x:Name="AIcenterCountLabel" Canvas.Top="420" Canvas.Left="450" FontSize="18" />
+                <Label x:Name="AIcenterCountLabel" Canvas.Top="400" Canvas.Left="445" FontSize="18" />
             </Canvas>
         </ScrollViewer>
     </Grid>

@@ -52,7 +52,7 @@ namespace Project
                             RoomNumber = rowData[4],
                             DayOfWeek = rowData[5]
                         };
-                        Console.WriteLine(line);
+                        
                         scheduleItems.Add(scheduleItem);
                        
                     }

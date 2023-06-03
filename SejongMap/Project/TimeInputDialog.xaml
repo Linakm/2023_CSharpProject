@@ -21,8 +21,8 @@
             <!-- 나머지 시간을 추가로 나열하거나 동적으로 생성할 수 있습니다 -->
         </ComboBox>
 
-        <Label Content="종료 시간" Margin="314,178,338,230" FontSize="24" Grid.Column="1"/>
-        <ComboBox x:Name="usageTimeComboBox" Grid.Column="1" Margin="292,225,318,178" FontSize="20" SelectedIndex="0">
+        <Label Content="종료 시간" Margin="240,178,412,230" FontSize="24" Grid.Column="1"/>
+        <ComboBox x:Name="usageTimeComboBox" Grid.Column="1" Margin="227,225,383,178" FontSize="20" SelectedIndex="0">
 
 
 
@@ -33,5 +33,7 @@
         </Button>
         <Label Content="사용하려는 시간을 입력해주세요" FontSize="30"
                 Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" Margin="158,44,0,0" VerticalAlignment="Top" Width="461"/>
+        <ComboBox x:Name="dayOfWeekComboBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="448,234,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="요일" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="459,198,0,0" VerticalAlignment="Top" Width="126"/>
     </Grid>
 </Page>
