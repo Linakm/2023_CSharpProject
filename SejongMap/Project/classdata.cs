@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+//using System.Text.Encoding.CodePages;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -20,14 +22,22 @@ namespace Project
 
     public class CSVReader
     {
+        public static Encoding EUCKREncoding()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            Encoding euckr = Encoding.GetEncoding(949);
+            return euckr;
+        }
+
         public List<ScheduleItem> ReadCSV(string filePath)
         {
             List<ScheduleItem> scheduleItems = new List<ScheduleItem>();
-// 다시 생각을 해보자입니다. 그럼 이만...입니다. 생각을 더 잘 해보자.  // 진짜변수때문이었네
+
             try
             {
-                using (StreamReader reader = new StreamReader(filePath))
+                using (StreamReader reader = new StreamReader(filePath, EUCKREncoding()))
                 {
+
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
@@ -42,7 +52,7 @@ namespace Project
                             RoomNumber = rowData[4],
                             DayOfWeek = rowData[5]
                         };
-
+                        Console.WriteLine(line);
                         scheduleItems.Add(scheduleItem);
                        
                     }

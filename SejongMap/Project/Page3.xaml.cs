@@ -13,13 +13,15 @@ using System.Windows.Shapes;
 using Project;
 namespace Project
 {
+   
+         
     public partial class Page3 : Page
     {
         private TimeSpan StartTime;
         private TimeSpan UsageTime; // 사용시간이 아니라 끝나는 시간인데 변수 이름을 안바꿨습니다. 
-        private List<ScheduleItem> scheduleItems = new List<ScheduleItem>();
+        
         private const string csvFilePath = "classdata.csv";
-
+        List<ScheduleItem> scheduleItems;
         public Page3(TimeSpan startTime, TimeSpan usageTime)
         {
             InitializeComponent();
@@ -28,8 +30,7 @@ namespace Project
             this.StartTime = startTime;
             this.UsageTime = usageTime;
             CSVReader csvReader = new CSVReader();
-            List<ScheduleItem> scheduleItems = csvReader.ReadCSV(csvFilePath);
-
+            scheduleItems = csvReader.ReadCSV(csvFilePath);
             DisplayAvailableRoomCounts();
         }
        
@@ -69,47 +70,6 @@ namespace Project
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Uri($"/{roomName}.xaml", UriKind.RelativeOrAbsolute));
         }
-
-
-        private void LoadDataFromCSV()
-        {
-            try
-            {
-
-                string[] lines = File.ReadAllLines(csvFilePath, Encoding.UTF8);
-
-                CultureInfo culture = new CultureInfo("ko-KR");
-                foreach (string line in lines)
-                {
-                  
-                    string[] values = line.Split(',');
-
-                    if (values.Length >= 6)
-                    {
-                        ScheduleItem item = new ScheduleItem
-                        {
-                            ID = int.Parse(values[0]),
-                            StartTime = TimeSpan.Parse(values[1]), // TimeSpan으로 변환
-                            EndTime = TimeSpan.Parse(values[2]), // TimeSpan으로 변환
-                            BuildingName = values[3],
-                            RoomNumber = values[4],
-                            DayOfWeek = values[5]
-                        };
-
-                        scheduleItems.Add(item);
-                        //MessageBox.Show($"BuildingName: {item.BuildingName}\nRoomNumber: {item.RoomNumber}\nDayOfWeek: {item.DayOfWeek}", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                }
-
-                MessageBox.Show("CSV 파일이 성공적으로 로드되었습니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("CSV 파일을 읽어오는 중 오류가 발생했습니다: " + ex.Message, "오류", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
-
 
 
 
