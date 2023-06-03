@@ -23,7 +23,7 @@
 
 
         <Canvas Grid.Row="1" Width="300" Height="300" Background="#FFFDE5">
-            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Red" Name="room104">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />

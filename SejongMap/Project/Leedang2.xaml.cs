@@ -20,10 +20,34 @@ namespace Project
     public partial class Leedang2 : Page
     {
         private List<string> buildingClassrooms;
-        public Leedang2( List<string> buildingClassrooms)
+        public Leedang2(List<string> buildingClassrooms)
         {
-            this.buildingClassrooms=buildingClassrooms;
+            this.buildingClassrooms = buildingClassrooms;
             InitializeComponent();
+
+            int floor = 2;
+            int count = 0;
+            int otherFloorCount = 0;
+            for (int i = 0; i < buildingClassrooms.Count; i++)
+            {
+                if ((int)Char.GetNumericValue(buildingClassrooms[i][0]) == floor)
+                    count++;
+                else
+                    otherFloorCount++;
+
+            }
+
+            int[] roomNumber = new int[count];
+            for (int i = otherFloorCount; i < count; i++)
+            {
+                roomNumber[i] = int.Parse(buildingClassrooms[i]);
+                string buttonName = "room" + roomNumber[i].ToString();
+
+                Button button = FindName(buttonName) as Button;
+
+                Color color = (Color)ColorConverter.ConvertFromString("#B5B3A7");
+                button.Background = new SolidColorBrush(color);
+            }
         }
     }
 }

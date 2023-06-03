@@ -24,6 +24,22 @@ namespace Project
         {
             this.buildingClassrooms= buildingClassrooms;
         InitializeComponent();
+            UpdateButtonColors();
+        }
+
+        private void UpdateButtonColors()
+        {
+            if (buildingClassrooms.Contains("109B"))
+                room1.Background = Brushes.Transparent;
+            else
+                room1.Background = Brushes.Red;
+
+            if (buildingClassrooms.Contains("107"))
+                room2.Background = Brushes.Transparent;
+            else
+                room2.Background = Brushes.Red;
+
+
         }
     }
 }

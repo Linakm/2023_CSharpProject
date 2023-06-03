@@ -120,7 +120,6 @@ namespace Project
             
             for (int j = 0; j < 6; j++)
             {
-                
                 for (int i = 0; i < 2811; i++) //2811개이다. 
                 {
                     if (i + num - 1 >= 2811) break;
@@ -140,7 +139,9 @@ namespace Project
                     }
                    
                 }
+
                 classroomCounts[j] = buildingClassrooms[j].Count;
+           
             }
         
 

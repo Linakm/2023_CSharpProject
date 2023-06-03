@@ -23,8 +23,7 @@ namespace Project
     /// </summary>
     public partial class Saenal : Page
     {
-        private int usingCount = 10; // 사용 중인 개수 변수
-        private int maxCount = 20; // 최대 개수 변수
+       
         private List<string> buildingClassrooms;// 건물 강의실 리스트 변수
         public Saenal(List<string> buildingClassrooms)
         {
@@ -37,7 +36,7 @@ namespace Project
             int num = buildingClassrooms.Count;
             // 라벨에 값을 할당하여 출력
             UsingCnt1.Content = $"{num}";
-            //MaxCnt1.Content = maxCount.ToString();
+            
         }
         private void SaenalButton1_Click(object sender, RoutedEventArgs e)
         {

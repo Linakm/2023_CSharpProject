@@ -17,13 +17,29 @@ namespace Project
     /// <summary>
     /// AICenterB2F.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class AICenterB2F : Window
+    public partial class AICenterB2F : Page
     {
         private List<string> buildingClassrooms;
         public AICenterB2F(  List<string> buildingClassrooms)
         {
              this.buildingClassrooms=  buildingClassrooms;
         InitializeComponent();
+            UpdateButtonColors();
+        }
+
+        private void UpdateButtonColors()
+        {
+            if (buildingClassrooms.Contains("B205"))
+                room1.Background = Brushes.Transparent;
+            else
+                room1.Background = Brushes.Red;
+
+            if (buildingClassrooms.Contains("B209"))
+                room2.Background = Brushes.Transparent;
+            else
+                room2.Background = Brushes.Red;
+
+         
         }
     }
 }

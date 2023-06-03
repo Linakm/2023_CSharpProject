@@ -16,7 +16,7 @@ namespace Project
 {
     /// <summary>
     /// Jiphyeon3F.xaml에 대한 상호 작용 논리
-    /// </summary>
+    /// </saummary>
     public partial class Jiphyeon3F : Page
     {
         private List<string> buildingClassrooms;
@@ -24,6 +24,30 @@ namespace Project
         {
             this.buildingClassrooms= buildingClassrooms;
         InitializeComponent();
+            UpdateButtonColors();
+        }
+
+        private void UpdateButtonColors()
+        {
+            if (buildingClassrooms.Contains(room1.Content.ToString()))
+                room1.Background = Brushes.Transparent;
+            else
+                room1.Background = Brushes.Red;
+
+            if (buildingClassrooms.Contains(room2.Content.ToString()))
+                room2.Background = Brushes.Transparent;
+            else
+                room2.Background = Brushes.Red;
+
+            if (buildingClassrooms.Contains(room3.Content.ToString()))
+                room3.Background = Brushes.Transparent;
+            else
+                room3.Background = Brushes.Red;
+
+            if (buildingClassrooms.Contains(room4.Content.ToString()))
+                room4.Background = Brushes.Transparent;
+            else
+                room4.Background = Brushes.Red;
         }
     }
 }

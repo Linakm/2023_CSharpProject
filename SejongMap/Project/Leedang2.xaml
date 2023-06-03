@@ -23,7 +23,7 @@
 
 
         <Canvas Grid.Row="1" Width="300" Height="300" Background="#FFFDE5">
-            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Red" Name="room201">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -31,12 +31,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Label Content="201호" Grid.Column="0" />
-                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt1"/>
-                    <Label Content="20" Grid.Column="2" Name="maxCnt1"/>
+
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="80" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+            <Button Canvas.Left="16" Canvas.Top="80" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Red" Name="room202">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -44,12 +43,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Label Content="202호" Grid.Column="0" />
-                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right" Name="usingCnt2"/>
-                    <Label Content="20" Grid.Column="2"  Name="maxCnt2"/>
+
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="120" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+            <Button Canvas.Left="16" Canvas.Top="120" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Red" Name="room203">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -57,12 +55,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Label Content="203호" Grid.Column="0" />
-                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt3"/>
-                    <Label Content="20" Grid.Column="2" Name="maxCnt3" />
+
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="160" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+            <Button Canvas.Left="16" Canvas.Top="160" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Red" Name="room204">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -70,12 +67,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Label Content="204호" Grid.Column="0" />
-                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt4"/>
-                    <Label Content="20" Grid.Column="2" Name="maxCnt4"/>
+
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="200" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7">
+            <Button Canvas.Left="16" Canvas.Top="200" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Red" Name="room205">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -83,8 +79,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Label Content="205호" Grid.Column="0" />
-                    <Label Content="10  /" Grid.Column="1"  HorizontalAlignment="Right"  Name="usingCnt5"/>
-                    <Label Content="20" Grid.Column="2" Name="maxCnt5"/>
+
                 </Grid>
             </Button>
         </Canvas>

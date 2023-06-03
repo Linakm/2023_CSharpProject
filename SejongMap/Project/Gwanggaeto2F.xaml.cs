@@ -24,6 +24,54 @@ namespace Project
         {
             this.buildingClassrooms= buildingClassrooms;
             InitializeComponent();
+            UpdateButtonColors();
+        }
+
+        private void UpdateButtonColors()
+        {
+            if (buildingClassrooms.Contains("201"))
+                room1.Background = Brushes.Transparent;
+            else
+                room1.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("202"))
+                room2.Background = Brushes.Transparent;
+            else
+                room2.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("203"))
+                room3.Background = Brushes.Transparent;
+            else
+                room3.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("204"))
+                room4.Background = Brushes.Transparent;
+            else
+                room4.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("205"))
+                room5.Background = Brushes.Transparent;
+            else
+                room5.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("206"))
+                room6.Background = Brushes.Transparent;
+            else
+                room6.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("207"))
+                room7.Background = Brushes.Transparent;
+            else
+                room7.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("208"))
+                room8.Background = Brushes.Transparent;
+            else
+                room8.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("209"))
+                room9.Background = Brushes.Transparent;
+            else
+                room9.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("211"))
+                room10.Background = Brushes.Transparent;
+            else
+                room10.Background = Brushes.Red;
+
+
+
         }
     }
 }

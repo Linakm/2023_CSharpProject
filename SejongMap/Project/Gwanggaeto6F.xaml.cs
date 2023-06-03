@@ -23,6 +23,23 @@ namespace Project
         public Gwanggaeto6F(  List<string> buildingClassrooms)
         {this.buildingClassrooms =buildingClassrooms;
         InitializeComponent();
+            UpdateButtonColors();
+        }
+
+        private void UpdateButtonColors()
+        {
+            if (buildingClassrooms.Contains("616"))
+                room1.Background = Brushes.Transparent;
+            else
+                room1.Background = Brushes.Red;
+            if (buildingClassrooms.Contains("617"))
+                room2.Background = Brushes.Transparent;
+            else
+                room2.Background = Brushes.Red;
+
+
+
+
         }
     }
 }
