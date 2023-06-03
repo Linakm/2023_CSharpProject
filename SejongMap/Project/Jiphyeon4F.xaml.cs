@@ -19,9 +19,11 @@ namespace Project
     /// </summary>
     public partial class Jiphyeon4F : Page
     {
-        public Jiphyeon4F()
+        private List<string> buildingClassrooms;
+        public Jiphyeon4F(List<string> buildingClassrooms)
         {
             InitializeComponent();
+            this.buildingClassrooms = buildingClassrooms;
         }
     }
 }

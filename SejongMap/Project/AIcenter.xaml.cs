@@ -22,8 +22,11 @@ namespace Project
     /// </summary>
     public partial class AICenter : Page
     {
-        public AICenter()
+
+        List<string> buildingClassrooms;
+        public AICenter(List<string> buildingClassrooms)
         {
+            this.buildingClassrooms = buildingClassrooms;
             InitializeComponent();
 
             List<string> fontList = new List<string>();
@@ -36,42 +39,18 @@ namespace Project
 
         private void AIButton1_Click(object sender, RoutedEventArgs e)
         {
+            AICenterB1F AICenterB1F = new AICenterB1F(buildingClassrooms);
+            NavigationService.Navigate(AICenterB1F);
 
-            //int usingCnt = 10;
-            //int maxCnt = 20;
-
-            /*UsingCnt1.Content = usingCnt + " / ";
-            MaxCnt1.Content = maxCnt;
-
-            if (usingCnt >= maxCnt)
-                UsingCnt1.Foreground = new SolidColorBrush(Colors.Red);
-            else
-                UsingCnt1.Foreground = new SolidColorBrush(Colors.Green);
-            */
-
-            //MySQL연동하여 상호작용
-           
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/AICenterB1F.xaml", UriKind.RelativeOrAbsolute));
 
         }
 
         private void AIButton2_Click(object sender, RoutedEventArgs e)
         {
-            /*int usingCnt = 20;
-            int maxCnt = 20;
+            AICenterB2F AICenterB2F = new AICenterB2F(buildingClassrooms);
+            NavigationService.Navigate(AICenterB2F);
 
-            UsingCnt2.Content = usingCnt + " / ";
-            MaxCnt2.Content = maxCnt;
-
-            if (usingCnt >= maxCnt)
-                UsingCnt2.Foreground = new SolidColorBrush(Colors.Red);
-            else
-                UsingCnt2.Foreground = new SolidColorBrush(Colors.Green);
-            */
-            
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/AICenterB2F.xaml", UriKind.RelativeOrAbsolute));
+           
         }
     }
 }

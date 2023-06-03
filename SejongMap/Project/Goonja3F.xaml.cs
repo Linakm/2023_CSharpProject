@@ -19,8 +19,10 @@ namespace Project
     /// </summary>
     public partial class Goonja3F : Page
     {
-        public Goonja3F()
+        private List<string> buildingClassrooms;
+        public Goonja3F(  List<string> buildingClassrooms)
         {
+            this.buildingClassrooms=    buildingClassrooms;
             InitializeComponent();
         }
     }

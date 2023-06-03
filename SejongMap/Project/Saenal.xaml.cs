@@ -41,11 +41,9 @@ namespace Project
         }
         private void SaenalButton1_Click(object sender, RoutedEventArgs e)
         {
-          
 
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/Saenal1F.xaml", UriKind.RelativeOrAbsolute));
-
+            Saenal1F Saenal1F = new Saenal1F(buildingClassrooms);
+            NavigationService.Navigate(Saenal1F);
 
         }
     }

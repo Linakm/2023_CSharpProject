@@ -19,9 +19,11 @@ namespace Project
     /// </summary>
     public partial class AICenterB2F : Window
     {
-        public AICenterB2F()
+        private List<string> buildingClassrooms;
+        public AICenterB2F(  List<string> buildingClassrooms)
         {
-            InitializeComponent();
+             this.buildingClassrooms=  buildingClassrooms;
+        InitializeComponent();
         }
     }
 }

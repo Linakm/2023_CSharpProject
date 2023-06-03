@@ -51,31 +51,16 @@ namespace Project
 
         private void LeedangButton1_Click(object sender, RoutedEventArgs e)
         {
-          
-            
 
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/Leedang1F.xaml", UriKind.RelativeOrAbsolute));
+            Leedang1F Leedang1F = new Leedang1F(buildingClassrooms);
+            NavigationService.Navigate(Leedang1F);
+           
         }
 
         private void LeedangButton2_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            int usingCnt = 20;
-            int maxCnt = 20;
-
-            UsingCnt2.Content = usingCnt + " / ";
-            MaxCnt2.Content = maxCnt;
-
-            if (usingCnt >= maxCnt)
-                UsingCnt2.Foreground = new SolidColorBrush(Colors.Red);
-            else
-                UsingCnt2.Foreground = new SolidColorBrush(Colors.Green);
-            */
-           
-
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/Leedang2F.xaml", UriKind.RelativeOrAbsolute));
+            Leedang2 Leedang2 = new Leedang2(buildingClassrooms);
+            NavigationService.Navigate(Leedang2);
         }
     }
 }

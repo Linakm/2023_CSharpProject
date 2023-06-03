@@ -21,81 +21,28 @@ namespace Project
     /// </summary>
     public partial class Goonja : Page
     {
-        public Goonja()
+        List<string> buildingClassrooms;
+        public Goonja(List<string> buildingClassrooms)
         {
+            this.buildingClassrooms = buildingClassrooms;
             InitializeComponent();
         }
 
         private void GoonjaButton1_Click(object sender, RoutedEventArgs e)
         {
 
-            /*int usingCnt = 10;
-            int maxCnt = 20;
+            Goonja1F Goonja1F = new Goonja1F(buildingClassrooms);
+            NavigationService.Navigate(Goonja1F);
 
-            UsingCnt1.Content = usingCnt + " / ";
-            MaxCnt1.Content = maxCnt;
-
-            if (usingCnt >= maxCnt)
-                UsingCnt1.Foreground = new SolidColorBrush(Colors.Red);
-            else
-                UsingCnt1.Foreground = new SolidColorBrush(Colors.Green);
-            */
-            //MySQL연동하여 상호작용
-            MySqlConnection MyConnection = new MySqlConnection("Server = localhost; Port = 3307; Database = sejongmap; " +
-                                                                "Uid = root; Pwd = vangogh1!");
-
-            string selectQuery = "SELECT COUNT(RoomNumber) FROM project WHERE BuildingName = '군자관' AND DayOfWeek = dayofweek(CURDATE()) AND timediff(CURTIME(), StartTime) > 0 AND timediff(EndTime, CURTIME()) > 0 " +
-                "AND RoomNumber LIKE '1%';";
-
-            MyConnection.Open();
-
-            MySqlCommand cmd = new MySqlCommand(selectQuery, MyConnection);
-
-            object result = cmd.ExecuteScalar();
-
-            if (result != null)
-            {
-                UsingCnt1.Content = result;
-            }
-
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/Goonja1F.xaml", UriKind.RelativeOrAbsolute));
+           
         }
 
         private void GoonjaButton2_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            int usingCnt = 20;
-            int maxCnt = 20;
 
-            UsingCnt2.Content = usingCnt + " / ";
-            MaxCnt2.Content = maxCnt;
+            Goonja3F Goonja3F = new Goonja3F(buildingClassrooms);
+            NavigationService.Navigate(Goonja3F);
 
-            if (usingCnt >= maxCnt)
-                UsingCnt2.Foreground = new SolidColorBrush(Colors.Red);
-            else
-                UsingCnt2.Foreground = new SolidColorBrush(Colors.Green);
-            */
-            //MySQL연동하여 상호작용
-            MySqlConnection MyConnection = new MySqlConnection("Server = localhost; Port = 3307; Database = sejongmap; " +
-                                                                "Uid = root; Pwd = vangogh1!");
-
-            string selectQuery = "SELECT COUNT(RoomNumber) FROM project WHERE BuildingName = '군자관' AND DayOfWeek = dayofweek(CURDATE()) AND timediff(CURTIME(), StartTime) > 0 AND timediff(EndTime, CURTIME()) > 0 " +
-                "AND RoomNumber LIKE '3%';";
-
-            MyConnection.Open();
-
-            MySqlCommand cmd = new MySqlCommand(selectQuery, MyConnection);
-
-            object result = cmd.ExecuteScalar();
-
-            if (result != null)
-            {
-                UsingCnt2.Content = result;
-            }
-
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Uri("/Goonja3F.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

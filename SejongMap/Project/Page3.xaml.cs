@@ -39,7 +39,7 @@ namespace Project
         }
        
 
-        private void SaenalClick(object sender, RoutedEventArgs e)
+        private void SaenalClick(object sender, RoutedEventArgs e) // 잘 넘어간다. 
         {
             Saenal Saenal = new Saenal(buildingClassrooms[0]);
            // NavigateToRoomPage("Saenal");
@@ -50,29 +50,39 @@ namespace Project
         private void JiphyeonClick(object sender, RoutedEventArgs e)
         {
 
-            NavigateToRoomPage("Jiphyeon");
+            Jiphyeon Jiphyeon=new Jiphyeon(buildingClassrooms[1]);
+            NavigationService.Navigate(Jiphyeon);
+            //NavigateToRoomPage("Jiphyeon");
         }
 
         private void GoonjaClick(object sender, RoutedEventArgs e)
         {
-            NavigateToRoomPage("Goonja");
+            Goonja Goonja =new Goonja(buildingClassrooms[2]);
+            NavigationService.Navigate(Goonja);
+            //NavigateToRoomPage("Goonja");
         }
 
         private void GwanggaetoClick(object sender, RoutedEventArgs e)
         {
-           // Gwanggaeto Gwanggaeto = new Gwanggaeto(buildingClassrooms[3]); // 아직 안했다. 다시 해보자입니다. 
-            NavigateToRoomPage("Gwanggaeto");
-           // NavigationService.Navigate(Gwanggaeto);
+           Gwanggaeto Gwanggaeto = new Gwanggaeto(buildingClassrooms[3]); // 아직 안했다. 다시 해보자입니다. 
+            //NavigationService.Navigate(Gwanggaeto);
+
+            //NavigateToRoomPage("Gwanggaeto");
+            NavigationService.Navigate(Gwanggaeto);
         }
 
         private void LeedangClick(object sender, RoutedEventArgs e)
         {
-            NavigateToRoomPage("Leedang");
+            Leedang Leedang = new Leedang(buildingClassrooms[4]);
+            NavigationService.Navigate(Leedang);
+            //NavigateToRoomPage("Leedang");
         }
 
         private void AicenterClick(object sender, RoutedEventArgs e)
         {
-            NavigateToRoomPage("AIcenter");
+            AICenter AICenter = new AICenter(buildingClassrooms[5]);
+            NavigationService.Navigate(AICenter);
+            //NavigateToRoomPage("AIcenter");
         }
 
         private void NavigateToRoomPage(string roomName)
@@ -82,8 +92,6 @@ namespace Project
            
         }
       
-        //
-
         private void DisplayAvailableRoomCounts()
         {
 

@@ -19,8 +19,9 @@ namespace Project
     /// </summary>
     public partial class Gwanggaeto8F : Page
     {
-        public Gwanggaeto8F()
-        {
+        private List<string> buildingClassrooms;
+        public Gwanggaeto8F(List<string> buildingClassrooms)
+        {this.buildingClassrooms = buildingClassrooms;
             InitializeComponent();
         }
     }

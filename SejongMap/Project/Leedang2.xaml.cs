@@ -19,8 +19,10 @@ namespace Project
     /// </summary>
     public partial class Leedang2 : Page
     {
-        public Leedang2()
+        private List<string> buildingClassrooms;
+        public Leedang2( List<string> buildingClassrooms)
         {
+            this.buildingClassrooms=buildingClassrooms;
             InitializeComponent();
         }
     }
