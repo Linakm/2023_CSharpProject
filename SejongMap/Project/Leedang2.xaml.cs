@@ -25,29 +25,35 @@ namespace Project
             this.buildingClassrooms = buildingClassrooms;
             InitializeComponent();
 
-            int floor = 2;
-            int count = 0;
-            int otherFloorCount = 0;
-            for (int i = 0; i < buildingClassrooms.Count; i++)
-            {
-                if ((int)Char.GetNumericValue(buildingClassrooms[i][0]) == floor)
-                    count++;
-                else
-                    otherFloorCount++;
+            UpdateButtonColors();
+        }
 
-            }
+        private void UpdateButtonColors()
+        {
+            if (buildingClassrooms.Contains("201"))
+                room1.Background = Brushes.LightGreen;
+            else
+                room1.Background = Brushes.Transparent;
 
-            int[] roomNumber = new int[count];
-            for (int i = otherFloorCount; i < count; i++)
-            {
-                roomNumber[i] = int.Parse(buildingClassrooms[i]);
-                string buttonName = "room" + roomNumber[i].ToString();
+            if (buildingClassrooms.Contains("202"))
+                room2.Background = Brushes.LightGreen;
+            else
+                room2.Background = Brushes.Transparent;
 
-                Button button = FindName(buttonName) as Button;
+            if (buildingClassrooms.Contains("203"))
+                room3.Background = Brushes.LightGreen;
+            else
+                room3.Background = Brushes.Transparent;
+            if (buildingClassrooms.Contains("204"))
+                room4.Background = Brushes.LightGreen;
+            else
+                room4.Background = Brushes.Transparent;
+            if (buildingClassrooms.Contains("205"))
+                room5.Background = Brushes.LightGreen;
+            else
+                room5.Background = Brushes.Transparent;
 
-                Color color = (Color)ColorConverter.ConvertFromString("#B5B3A7");
-                button.Background = new SolidColorBrush(color);
-            }
+
         }
     }
 }

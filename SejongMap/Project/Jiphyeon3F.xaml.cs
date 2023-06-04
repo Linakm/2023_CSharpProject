@@ -30,24 +30,24 @@ namespace Project
         private void UpdateButtonColors()
         {
             if (buildingClassrooms.Contains(room1.Content.ToString()))
-                room1.Background = Brushes.Transparent;
+                room1.Background = Brushes.LightGreen;
             else
-                room1.Background = Brushes.Red;
+                room1.Background = Brushes.Transparent;
 
             if (buildingClassrooms.Contains(room2.Content.ToString()))
-                room2.Background = Brushes.Transparent;
+                room2.Background = Brushes.LightGreen;
             else
-                room2.Background = Brushes.Red;
+                room2.Background = Brushes.Transparent;
 
             if (buildingClassrooms.Contains(room3.Content.ToString()))
-                room3.Background = Brushes.Transparent;
+                room3.Background = Brushes.LightGreen;
             else
-                room3.Background = Brushes.Red;
+                room3.Background = Brushes.Transparent;
 
             if (buildingClassrooms.Contains(room4.Content.ToString()))
-                room4.Background = Brushes.Transparent;
+                room4.Background = Brushes.LightGreen;
             else
-                room4.Background = Brushes.Red;
+                room4.Background = Brushes.Transparent;
         }
     }
 }

@@ -30,9 +30,9 @@ namespace Project
         private void UpdateButtonColors()
         {
             if (buildingClassrooms.Contains("312"))
-                room1.Background = Brushes.Transparent;
+                room1.Background = Brushes.LightGreen;
             else
-                room1.Background = Brushes.Red;
+                room1.Background = Brushes.Transparent;
 
           
 
