@@ -63,10 +63,10 @@ namespace Project
                     countStartsWith5++;
                 }
                 else if (classroom.StartsWith("8"))
-            {
+                 {
                 countStartsWith6++;
-            }
-        }
+                   }
+                 }
 
             // 강의실 번호로 시작하는 개수를 라벨에 할당하여 출력
             G_UsingCnt1.Content = $"{countStartsWith1}"; // 1로 시작하는 개수

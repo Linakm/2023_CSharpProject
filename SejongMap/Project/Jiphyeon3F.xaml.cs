@@ -23,31 +23,39 @@ namespace Project
         public Jiphyeon3F( List<string> buildingClassrooms)
         {
             this.buildingClassrooms= buildingClassrooms;
-        InitializeComponent();
+            InitializeComponent();
             UpdateButtonColors();
         }
 
         private void UpdateButtonColors()
         {
-            if (buildingClassrooms.Contains(room1.Content.ToString()))
+            if (buildingClassrooms.Contains("301"))
                 room1.Background = Brushes.LightGreen;
             else
                 room1.Background = Brushes.Transparent;
 
-            if (buildingClassrooms.Contains(room2.Content.ToString()))
+            if (buildingClassrooms.Contains("302"))
                 room2.Background = Brushes.LightGreen;
             else
                 room2.Background = Brushes.Transparent;
 
-            if (buildingClassrooms.Contains(room3.Content.ToString()))
+            if (buildingClassrooms.Contains("303"))
                 room3.Background = Brushes.LightGreen;
             else
                 room3.Background = Brushes.Transparent;
 
-            if (buildingClassrooms.Contains(room4.Content.ToString()))
+            if (buildingClassrooms.Contains("307"))
                 room4.Background = Brushes.LightGreen;
             else
                 room4.Background = Brushes.Transparent;
+            if (buildingClassrooms.Contains("309"))
+                room5.Background = Brushes.LightGreen;
+            else
+                room5.Background = Brushes.Transparent;
+            if (buildingClassrooms.Contains("311"))
+                room6.Background = Brushes.LightGreen;
+            else
+                room6.Background = Brushes.Transparent;
         }
     }
 }

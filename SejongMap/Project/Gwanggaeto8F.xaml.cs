@@ -23,6 +23,7 @@ namespace Project
         public Gwanggaeto8F(List<string> buildingClassrooms)
         {this.buildingClassrooms = buildingClassrooms;
             InitializeComponent();
+            UpdateButtonColors(); // 버그 확인. 문제 해결. 
         }
 
         private void UpdateButtonColors()

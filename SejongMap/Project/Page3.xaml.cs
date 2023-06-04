@@ -118,7 +118,9 @@ namespace Project
             TimeSpan timeDifference = endTime - startTime;
             int num = (int)(timeDifference.TotalMinutes / 30);// 30분이 몇번 있는지이다. 
             
-            for (int j = 0; j < 6; j++)
+            
+
+            for (int j = 0; j < 6&& num!=0; j++) 
             {
                 for (int i = 0; i < 2811; i++) //2811개이다. 
                 {
@@ -130,11 +132,11 @@ namespace Project
                     {
                         if (scheduleItems[i + num - 1].EndTime == endTime)// 
                         {
-
+                           
                             buildingClassrooms[j].Add(scheduleItems[i].RoomNumber); // j는 건물에 해당하는 인덱스
                             i += num-1; // 뒤에서 하나더 추가를 하기 때문에
                         }
-                        
+                            
                       
                     }
                    
@@ -144,6 +146,8 @@ namespace Project
            
             }
         
+
+
 
         // UI 요소에 개수와 강의실 목록을 표시
         SaenalCountLabel.Content = buildingClassrooms[0].Count;
