@@ -29,18 +29,18 @@ namespace Project
         private void UpdateButtonColors()
         {
             if (buildingClassrooms.Contains("719"))
+                room1.Background = Brushes.LightGreen;
+            else
                 room1.Background = Brushes.Transparent;
-            else
-                room1.Background = Brushes.Red;
             if (buildingClassrooms.Contains("720"))
-                room2.Background = Brushes.Transparent;
+                room2.Background = Brushes.LightGreen;
             else
-                room2.Background = Brushes.Red;
+                room2.Background = Brushes.Transparent;
 
 
 
 
-    }
+        }
 }
 
         }

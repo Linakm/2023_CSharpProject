@@ -23,7 +23,7 @@
 
 
         <Canvas Grid.Row="1" Width="300" Background="#FFFDE5" Margin="250,23,250,10">
-            <Button Canvas.Left="16" Canvas.Top="10" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room1">
+            <Button Canvas.Left="16" Canvas.Top="10" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room1">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -35,7 +35,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room2">
+            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room2">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -47,7 +47,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="70" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room3">
+            <Button Canvas.Left="16" Canvas.Top="70" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room3">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -59,7 +59,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="100" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room4">
+            <Button Canvas.Left="16" Canvas.Top="100" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room4">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -71,7 +71,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="130" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room5">
+            <Button Canvas.Left="16" Canvas.Top="130" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room5">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -84,7 +84,7 @@
             </Button>
 
 
-            <Button Canvas.Left="16" Canvas.Top="160" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room6">
+            <Button Canvas.Left="16" Canvas.Top="160" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room6">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -96,7 +96,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="190" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room7">
+            <Button Canvas.Left="16" Canvas.Top="190" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room7">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -108,7 +108,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="220" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room8">
+            <Button Canvas.Left="16" Canvas.Top="220" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room8">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -120,7 +120,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="250" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room9">
+            <Button Canvas.Left="16" Canvas.Top="250" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room9">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -132,7 +132,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="280" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7" Name="room10">
+            <Button Canvas.Left="16" Canvas.Top="280" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent" Name="room10">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />

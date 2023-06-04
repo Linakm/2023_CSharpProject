@@ -11,29 +11,46 @@
 
     <Grid Background="#E0E0E0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+
+
         </Grid.ColumnDefinitions>
 
-        <Label Content="시작 시간" Margin="43,176,615,230" FontSize="24" Grid.Column="1"/>
-        <ComboBox x:Name="startTimeComboBox" Grid.Column="1" Margin="22,225,594,178" FontSize="20" SelectedIndex="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Label Content="사용하려는 시간을 입력해주세요" FontSize="20" Height="58" VerticalAlignment="Top" Width="461"  FontFamily="나눔고딕" FontWeight="Bold" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <Label Content="시작 시간" FontSize="15" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="나눔고딕" FontWeight="SemiBold"/>
+        <ComboBox x:Name="startTimeComboBox" Grid.Column="1" FontSize="20" SelectedIndex="0" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="50" VerticalAlignment="Top" Width="160">
 
             <!-- 나머지 시간을 추가로 나열하거나 동적으로 생성할 수 있습니다 -->
         </ComboBox>
 
-        <Label Content="종료 시간" Margin="240,178,412,230" FontSize="24" Grid.Column="1"/>
-        <ComboBox x:Name="usageTimeComboBox" Grid.Column="1" Margin="227,225,383,178" FontSize="20" SelectedIndex="0">
-
-
-
+        <Label Content="종료 시간" FontSize="15" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontFamily="나눔고딕" FontWeight="SemiBold"/>
+        <ComboBox x:Name="usageTimeComboBox" Grid.Column="2" FontSize="20" SelectedIndex="0" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="50" VerticalAlignment="Top" Width="160">
         </ComboBox>
 
-        <Button Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="132" Height="57" Margin="0,0,41,65" Background="#59BF5B" Click="ConfirmButton_Click">
-            <Rectangle Fill="White" Stroke="Black" RadiusX="10" RadiusY="10"/>
+        <Label Content="요일"  Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center"  FontSize="15" FontWeight="SemiBold"/>
+        <ComboBox x:Name="dayOfWeekComboBox"  Grid.Column="3" Grid.Row="2" FontSize="20"    SelectionChanged="ComboBox_SelectionChanged" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="50" VerticalAlignment="Top" Width="160"/>
+
+        <Button Grid.Column="3"  VerticalAlignment="Center" Grid.Row="3" Width="100" Height="38" Background="#59BF5B" Click="ConfirmButton_Click" BorderBrush="Transparent" Grid.ColumnSpan="2" Margin="150,0,50,0">
+            <Label Foreground="White">확인</Label>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10">
+                    </Setter>
+                </Style>
+            </Button.Resources>
         </Button>
-        <Label Content="사용하려는 시간을 입력해주세요" FontSize="30"
-                Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="58" Margin="158,44,0,0" VerticalAlignment="Top" Width="461"/>
-        <ComboBox x:Name="dayOfWeekComboBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="32" Margin="448,234,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label Content="요일" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="22" Margin="459,198,0,0" VerticalAlignment="Top" Width="126"/>
+
     </Grid>
 </Page>

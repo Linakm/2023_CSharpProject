@@ -23,7 +23,7 @@
 
 
         <Canvas Grid.Row="1" Width="300" Height="300" Background="#FFFDE5">
-            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7" Name="room1">
+            <Button Canvas.Left="16" Canvas.Top="40" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent" Name="room1">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
@@ -35,7 +35,7 @@
                 </Grid>
             </Button>
 
-            <Button Canvas.Left="16" Canvas.Top="80" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="#B5B3A7"  Name="room2">
+            <Button Canvas.Left="16" Canvas.Top="80" BorderBrush="Transparent" FontFamily="나눔고딕" Width="268" FontWeight="SemiBold" Background="Transparent"  Name="room2">
                 <Grid Width="268">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*" />
